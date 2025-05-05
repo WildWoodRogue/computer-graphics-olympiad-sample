@@ -1,0 +1,28 @@
+// Each #kernel tells which function to compile; you can have many kernels
+#pragma kernel CSMain
+
+// Create a RenderTexture with enableRandomWrite flag and set it
+// with cs.SetTexture
+struct Vertex {
+    float3 position;
+};
+
+RWStructuredBuffer<Vertex> vertices;
+
+float time;
+float amplitude;
+float frequency;
+float speed;
+
+[numthreads(64, 1, 1)]
+void CSMain (uint id : SV_DispatchThreadID)
+{
+    Vertex v = vertices[id];
+    float x = v.position.x;
+    float z = v.position.z;
+
+    float wave = sin(x * frequency + time * speed) + cos(z * frequency + time * speed);
+    v.position.y = wave * amplitude;
+
+    vertices[id] = v;
+}

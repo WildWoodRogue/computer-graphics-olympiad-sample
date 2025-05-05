@@ -252,6 +252,7 @@ GameObject:
   - component: {fileID: 1517542732}
   - component: {fileID: 1517542731}
   - component: {fileID: 1517542730}
+  - component: {fileID: 1517542734}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -346,6 +347,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1517542734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1517542729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b4cb1dae3d8f5c45bcefc4db487ff33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  computeShader: {fileID: 7200000, guid: 3bfce411dd6fcdd499872fcf651b3f4a, type: 3}
+  amplitude: 0.5
+  frequency: 0.5
+  speed: 1
 --- !u!1 &1682043906
 GameObject:
   m_ObjectHideFlags: 0
@@ -406,7 +423,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 823d04c003831254d8740a7d45976466, type: 2}
+  - {fileID: 2100000, guid: cd92aa3a113c6644e9296dda10e740e5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -554,7 +571,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
+  far clip plane: 100000
   field of view: 60
   orthographic: 0
   orthographic size: 5
